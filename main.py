@@ -138,7 +138,15 @@ shape_colors = [(0, 255, 0), (255, 0, 0), (0, 255, 255), (255, 255, 0), (255, 16
 # index 0 - 6 represent shape
 
 class Piece(object):
-    pass
+    rows = 20  # y
+    columns = 10  # x
+
+    def __init__(self, column, row, shape):
+        self.x = column
+        self.y = row
+        self.shape = shape
+        self.color = shape_colors[shapes.index(shape)]
+        self.rotation = 0  # number from 0-3
 
 
 def create_grid(locked_positions={}):
